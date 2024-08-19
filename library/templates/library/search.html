@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Search</title>
+</head>
+<body>
+    <h1>Search for Books</h1>
+    <form method="GET" action="">
+        <input type="text" name="q" placeholder="Search by title or author">
+        <button type="submit">Search</button>
+    </form>
+
+    <h2>Results:</h2>
+    <ul>
+        {% for book in books %}
+            <li>{{ book.title }} by {{ book.author.name }} - {% if book.available %} Available {% else %} Borrowed {% endif %}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
